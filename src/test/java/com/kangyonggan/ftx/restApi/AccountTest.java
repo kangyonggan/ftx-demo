@@ -5,6 +5,8 @@ import com.kangyonggan.ftx.model.Account;
 import org.junit.Test;
 
 /**
+ * 账户
+ *
  * @author kyg
  */
 public class AccountTest extends AbstractTest {

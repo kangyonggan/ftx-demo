@@ -13,6 +13,7 @@ import org.springframework.stereotype.Component;
 public class FtxProperties {
 
     private String host;
+    private String wsUrl;
     private String apiKey;
     private String apiSecretKey;
 
