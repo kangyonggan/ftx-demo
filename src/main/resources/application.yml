@@ -1,4 +1,5 @@
 ftx:
   host: https://ftx.com
+  ws-url: wss://ftx.com/ws
   api-key:
   api-secret-key:
