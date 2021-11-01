@@ -26,8 +26,9 @@ public class OrderTest extends AbstractTest {
         JSONObject params = new JSONObject();
         params.put("market", "BTC-PERP");
         params.put("side", "buy");
-        params.put("typr", "limit");
+        params.put("type", "limit");
         params.put("price", BigDecimal.valueOf(50000));
+        params.put("size", BigDecimal.ONE);
         params.put("reduceOnly", false);
         params.put("ioc", false);
         params.put("postOnly", false);
