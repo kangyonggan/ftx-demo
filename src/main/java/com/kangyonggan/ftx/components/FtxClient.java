@@ -34,6 +34,28 @@ public class FtxClient {
     }
 
     /**
+     * post
+     *
+     * @param url
+     * @param body
+     * @param clazz
+     * @return
+     */
+    public <T> T post(String url, String body, Class<T> clazz) {
+        return request(Method.POST, url, body).getJSONObject("result").toJavaObject(clazz);
+    }
+
+    /**
+     * del
+     *
+     * @param url
+     * @return
+     */
+    public void delete(String url) {
+        request(Method.DELETE, url, null);
+    }
+
+    /**
      * get obj
      *
      * @param url
