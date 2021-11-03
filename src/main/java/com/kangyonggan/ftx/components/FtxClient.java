@@ -93,10 +93,11 @@ public class FtxClient {
                 .header("Content-Type", FtxConstants.SIGNATURE_METHOD_VALUE)
                 .header("FTX-KEY", ftxProperties.getApiKey())
                 .header("FTX-TS", String.valueOf(ts))
-                .header("FTX-SIGN", sign);
+                .header("FTX-SIGN", sign)
+                .header("FTX-SUBACCOUNT", ftxProperties.getSubAccount());
 
         if (Method.POST == method) {
-            builder = builder.post(RequestBody.create(MediaType.parse(FtxConstants.APPLICATION_JSON), StringUtils.EMPTY));
+            builder = builder.post(RequestBody.create(MediaType.parse(FtxConstants.APPLICATION_JSON), body));
         } else if (Method.PUT == method) {
             builder = builder.put(RequestBody.create(MediaType.parse(FtxConstants.APPLICATION_JSON), StringUtils.EMPTY));
         } else if (Method.DELETE == method) {

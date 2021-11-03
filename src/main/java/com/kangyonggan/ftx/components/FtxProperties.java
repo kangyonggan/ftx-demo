@@ -16,5 +16,6 @@ public class FtxProperties {
     private String wsUrl;
     private String apiKey;
     private String apiSecretKey;
+    private String subAccount;
 
 }

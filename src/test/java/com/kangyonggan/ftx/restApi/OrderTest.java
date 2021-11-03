@@ -19,6 +19,28 @@ public class OrderTest extends AbstractTest {
     private FtxClient ftxClient;
 
     /**
+     * 下单 - 市价
+     *
+     * {"result":[],"success":true}
+     * {"success":false,"error":"Missing parameter price"}
+     */
+    @Test
+    public void createOrderMarket() {
+        JSONObject params = new JSONObject();
+        params.put("market", "ETH-PERP");
+        params.put("side", "buy");
+        params.put("type", "market");
+        params.put("price", BigDecimal.valueOf(4555));
+        params.put("size", BigDecimal.valueOf(0.001));
+//        params.put("reduceOnly", false);
+//        params.put("ioc", false);
+//        params.put("postOnly", false);
+        params.put("clientId", String.valueOf(System.currentTimeMillis()));
+
+        LOGGER.info("createOrder:{}", ftxClient.post("/api/orders", params.toJSONString(), CreateOrderRes.class));
+    }
+
+    /**
      * 下单
      */
     @Test
